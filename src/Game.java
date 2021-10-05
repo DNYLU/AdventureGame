@@ -36,8 +36,11 @@ public class Game {
 
   public void start() {
     System.out.print("Welcome to the Hunted Manor:");
-    System.out.print("You have lost your way in a dark forest in a heavy storm. When suddenly see a giant manor on top of the hill.\n You make the way to the manor, but when you enter the manor, the door shuts behind you, and you hear \n" +
-        "Uncomfortable sounds.\n you try to get out again but the door is locked.\n You have to find a way out,");
+    System.out.print("\nYou have lost your way in a dark forest in a heavy storm. When suddenly see a giant manor on top of the hill.\n" +
+        "You make the way to the manor, but when you enter the manor, the door shuts behind you, and you hear " +
+        "uncomfortable and scary sounds." +
+        "\nYou try to get out again but the door is locked." +
+        "\nYou have to find a way out,");
     System.out.println("You are in " + currentRoom);
 
     // While loop - Actions
