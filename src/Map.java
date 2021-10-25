@@ -37,4 +37,7 @@ public class Map {
         r9.setWest(r8);
 
     }
+
+    // Items
+
 }

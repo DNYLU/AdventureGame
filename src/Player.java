@@ -6,7 +6,8 @@ public class Player {
   private String playerName;
   private int playerHealth;
   private ArrayList <String> inventory = new ArrayList<>();
-  // private Room currentRoom;
+  private Room currentRoom;
+
 
   // Defining Player() constructor
   public Player() {
@@ -15,10 +16,10 @@ public class Player {
   }
 
   // Player constructor
-  // Skal Arraylist med i parameteren? - Spørg David :)
-  public Player(String playerName, Room startPosition ,int playerHealth, ArrayList<String> inventory) {
+  public Player(String playerName, Room startingPosition ,int playerHealth) {
     this.playerName = playerName;
     this.playerHealth = playerHealth;
+    this.currentRoom = startingPosition;
     this.inventory = new ArrayList<>();
   }
 
@@ -46,5 +47,12 @@ public class Player {
     return inventory;
   }
 
+  public void setCurrentRoom(Room currentRoom) {
+    this.currentRoom = currentRoom;
+  }
+
+  public Room getCurrentRoom() {
+    return currentRoom;
+  }
 
 }

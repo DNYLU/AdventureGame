@@ -9,6 +9,7 @@ public class Room {
     private String description;
 
 
+
     // Constructor
     public Room(String name, String description) {
         this.name = name;
@@ -55,5 +56,6 @@ public class Room {
     public String toString() {
         return this.name + description;
     }
+
 
 }
