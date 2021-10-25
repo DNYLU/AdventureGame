@@ -16,8 +16,13 @@ public class Player {
     inventory = new ArrayList<>();
   }
 
+  // Take item
   public void takeItem(String itemName) {
     inventory.add(itemName);
+  }
+  //Drop item
+  public void dropItem(String itemName) {
+    inventory.remove(itemName);
   }
 
   // Player constructor
