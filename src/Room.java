@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Room {
 
     private Room north, east, south, west;
@@ -16,10 +18,6 @@ public class Room {
     // Returnerer navnet, så det kan bruges i map
     public String getName() {
         return this.name;
-    }
-
-    public String toString() {
-        return this.name + description;
     }
 
     public void setNorth(Room north) {
@@ -53,5 +51,9 @@ public class Room {
     public Room getWest() {
         return west;
     }
-}
 
+    public String toString() {
+        return this.name + description;
+    }
+
+}
