@@ -5,7 +5,7 @@ public class Room {
     private Room north, east, south, west;
 
 
-    //ArrayList til items
+    //ArrayList for items
     private ArrayList<Item> items;
 
     //Directions to navigate room

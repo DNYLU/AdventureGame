@@ -98,7 +98,11 @@ public class Adventure {
 
         // Drop item (Player)
         if (playerCommands.equals("drop")) {
-          if (player.getCurrentRoom().addItem();
+          // Fix i morgen
+          if (player.getCurrentRoom().addItem()) {
+            player.dropItem("Lamp");
+            System.out.println(player.getInventory());
+          }
         }
       }
     }
