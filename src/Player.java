@@ -5,7 +5,7 @@ public class Player {
   // Instance variables
   private String playerName;
   private int playerHealth;
-  private ArrayList <String> inventory = new ArrayList<>();
+  private ArrayList <String> inventory;
   private Room currentRoom;
 
 
@@ -13,6 +13,11 @@ public class Player {
   public Player() {
     this.playerName = "";
     this.playerHealth = 100;
+    inventory = new ArrayList<>();
+  }
+
+  public void takeItem(String itemName) {
+    inventory.add(itemName);
   }
 
   // Player constructor
@@ -54,5 +59,6 @@ public class Player {
   public Room getCurrentRoom() {
     return currentRoom;
   }
+
 
 }

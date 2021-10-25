@@ -8,8 +8,6 @@ public class Adventure {
   private String playerCommands;
   //private String playerLook;
   //private Player playerName;
-  //private Room currentRoomDescription;
-
 
   public Adventure() {
   }
@@ -82,15 +80,29 @@ public class Adventure {
         System.out.println("> You have ended the game");
         break;
       }
+
+      // Show inventory
+      if (playerCommands.equals("inventory") || playerCommands.equals("inv")) {
+        System.out.println("Backpack:\n" + player.getInventory());
+      }
+
+      // Take item (Player)
+      if (playerCommands.equals("take")) {
+        if (player.getCurrentRoom().removeItem("Lamp")) {
+          player.takeItem("Lamp");
+          //Slet om lidt
+          System.out.println(player.getInventory());
+        } else {
+          System.out.println("There is no item with that name here");
+        }
+
+        // Drop item (Player)
+        if (playerCommands.equals("drop")) {
+          if (player.getCurrentRoom().addItem();
+        }
+      }
     }
 
-    // Forkert, men tester bare, så jeg kan arbejde videre på det i morgen
-    ArrayList inventoryTest = new ArrayList();
-    if (playerCommands.equals("test")) {
-      inventoryTest.add("Lamp");
-      System.out.println("You've picked up a " + inventoryTest);
-      System.out.println("Test worked");
-    }
   } // Start
 
   //Help command

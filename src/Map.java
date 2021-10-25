@@ -1,17 +1,18 @@
 public class Map {
 
-    Room starterRoom;
+    public Room starterRoom;
+    private Room r1, r2, r3, r4, r5, r6, r7, r8, r9;
 
     Map() { // Names and descriptions
-        Room r1 = new Room("The Great hall", "\nThere are statues on both sides, with paintings on top of the former owners of the manor");
-        Room r2 = new Room("The Bed Chambers", "\nThere are four-poster bed and mirror on the side");
-        Room r3 = new Room("The Solars", "\nThere is a table and a chair");
-        Room r4 = new Room("The Bathroom", "\nThere is a bath and a toilet");
-        Room r5 = new Room("The Kitchen", "\nThere is a stove and a pantry");
-        Room r6 = new Room("The Gatehouse", "\nThere is an armor of an old knight and a lever");
-        Room r7 = new Room("The Chapels", "\nThere is an old coffin with the description: here lies the duke");
-        Room r8 = new Room("The Storeroom", "\nThere are a lot of chest");
-        Room r9 = new Room("The Guardroom", "\nThere is a tabel with two chairs, and a sword on top on it");
+         r1 = new Room("The Great hall", "\nThere are statues on both sides, with paintings on top of the former owners of the manor");
+         r2 = new Room("The Bed Chambers", "\nThere are four-poster bed and mirror on the side");
+         r3 = new Room("The Solars", "\nThere is a table and a chair");
+         r4 = new Room("The Bathroom", "\nThere is a bath and a toilet");
+         r5 = new Room("The Kitchen", "\nThere is a stove and a pantry");
+         r6 = new Room("The Gatehouse", "\nThere is an armor of an old knight and a lever");
+         r7 = new Room("The Chapels", "\nThere is an old coffin with the description: here lies the duke");
+         r8 = new Room("The Storeroom", "\nThere are a lot of chest");
+         r9 = new Room("The Guardroom", "\nThere is a tabel with two chairs, and a sword on top on it");
 
         // Starter room
         starterRoom = r1;
@@ -36,8 +37,11 @@ public class Map {
         r9.setNorth(r6);
         r9.setWest(r8);
 
+        addItems();
     }
 
     // Items
-
+    public void addItems() {
+        r2.addItem(new Item("Lamp","Lamp description"));
+    }
 }

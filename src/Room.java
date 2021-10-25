@@ -4,6 +4,10 @@ public class Room {
 
     private Room north, east, south, west;
 
+
+    //ArrayList til items
+    private ArrayList<Item> items;
+
     //Directions to navigate room
     private String name;
     private String description;
@@ -14,6 +18,20 @@ public class Room {
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
+        items = new ArrayList<Item>();
+    }
+
+    public boolean removeItem(String itemName) {
+        for (Item item : items) {
+            if (item.getName().equals(itemName)) {
+                return true; // if the item exists
+            }
+        }
+        return false; // if the item doesn't exist
+    }
+
+    public void addItem(Item item) {
+        items.add(item);
     }
 
     // Returnerer navnet, så det kan bruges i map
@@ -54,6 +72,7 @@ public class Room {
     }
 
     public String toString() {
+
         return this.name + description;
     }
 
