@@ -38,10 +38,16 @@ public class Map {
         r9.setWest(r8);
 
         addItems();
+        removeItems();
     }
 
-    // Items
+    // Add item to r2
     public void addItems() {
         r2.addItem(new Item("Lamp","Lamp description"));
+    }
+
+    // Remove item from r2
+    public void removeItems() {
+      r2.removeItem("Lamp");
     }
 }

@@ -83,27 +83,34 @@ public class Adventure {
 
       // Show inventory
       if (playerCommands.equals("inventory") || playerCommands.equals("inv")) {
-        System.out.println("Backpack:\n" + player.getInventory());
+        System.out.println("Inventory:\n" + player.getInventory());
       }
 
       // Take item (Player)
       if (playerCommands.equals("take")) {
         if (player.getCurrentRoom().removeItem("Lamp")) {
-          player.takeItem("Lamp");
+          player.takeItem();
           //Slet om lidt
           System.out.println(player.getInventory());
+
         } else {
           System.out.println("There is no item with that name here");
         }
 
+        if (playerCommands.equalsIgnoreCase("drop")) {
+          player.getInventory().remove("Lamp");
+          System.out.println("Which item would you like to drop?");
+          //insert 'Drop' command
+        }
         // Drop item (Player)
-        if (playerCommands.equals("drop")) {
+        /*if (playerCommands.equals("drop")) {
           // Fix i morgen
-          if (player.getCurrentRoom().addItem()) {
-            player.dropItem("Lamp");
+          if (player.getCurrentRoom().) {
+
             System.out.println(player.getInventory());
           }
-        }
+        }*/
+
       }
     }
 

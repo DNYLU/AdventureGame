@@ -5,7 +5,7 @@ public class Player {
   // Instance variables
   private String playerName;
   private int playerHealth;
-  private ArrayList <String> inventory;
+  private ArrayList <Item> inventory;
   private Room currentRoom;
 
 
@@ -17,16 +17,31 @@ public class Player {
   }
 
   // Take item
-  public void takeItem(String itemName) {
-    inventory.add(itemName);
+  public void takeItem(String itemName, Room room) {
+    ArrayList<Item> items = room.getItems();
+    for (Item item1 : items) {
+      if (itemName.equals(item1.getName())) { // Check if item is the same as
+    inventory.add(item1);    
+      }
+    }
   }
+
   //Drop item
-  public void dropItem(String itemName) {
+  /*public void dropItem(String itemName) {
     inventory.remove(itemName);
+  }*/
+
+  public boolean playerRemoveItem(String itemName) {
+    for (String item : inventory) {
+      if (inventory.equals(itemName)) { // Check if item
+        return true; // if the item exists
+      }
+    }
+    return false; // if the item doesn't exist
   }
 
   // Player constructor
-  public Player(String playerName, Room startingPosition ,int playerHealth) {
+  public Player(String playerName, Room startingPosition, int playerHealth) {
     this.playerName = playerName;
     this.playerHealth = playerHealth;
     this.currentRoom = startingPosition;

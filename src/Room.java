@@ -12,8 +12,6 @@ public class Room {
     private String name;
     private String description;
 
-
-
     // Constructor
     public Room(String name, String description) {
         this.name = name;
@@ -24,6 +22,7 @@ public class Room {
     public boolean removeItem(String itemName) {
         for (Item item : items) {
             if (item.getName().equals(itemName)) {
+                items.remove(item);
                 return true; // if the item exists
             }
         }
@@ -34,7 +33,6 @@ public class Room {
         items.add(item);
     }
 
-    // Returnerer navnet, så det kan bruges i map
     public String getName() {
         return this.name;
     }
@@ -76,5 +74,7 @@ public class Room {
         return this.name + description;
     }
 
-
+    public ArrayList<Item> getItems() {
+        return items;
+    }
 }
