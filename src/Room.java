@@ -4,9 +4,11 @@ public class Room {
 
     private Room north, east, south, west;
 
-
+    public ArrayList<Item> getInventory() {
+        return inventory;
+    }
     //ArrayList for items
-    private ArrayList<Item> items;
+    private ArrayList<Item> inventory;
 
     //Directions to navigate room
     private String name;
@@ -16,11 +18,11 @@ public class Room {
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
-        items = new ArrayList<Item>();
+        inventory = new ArrayList<Item>();
     }
 
     public boolean removeItem(String itemName) {
-        for (Item item : items) {
+        for (Item item : inventory) {
             if (item.getName().equals(itemName)) {
                 items.remove(item);
                 return true; // if the item exists
@@ -30,7 +32,7 @@ public class Room {
     }
 
     public void addItem(Item item) {
-        items.add(item);
+        inventory.add(item);
     }
 
     public String getName() {
