@@ -43,7 +43,7 @@ public class Map {
 
     // Add item to r2
     public void addItems() {
-        r2.addItem(new Item("Lamp","Lamp description"));
+        r2.addItem(new Item("Lamp","Lamp description", 1));
     }
 
     // Remove item from r2
