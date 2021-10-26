@@ -1,6 +1,7 @@
 public class Map {
 
     public Room starterRoom;
+    public Room lampRoom; //TEST
     private Room r1, r2, r3, r4, r5, r6, r7, r8, r9;
 
     Map() { // Names and descriptions
@@ -16,6 +17,8 @@ public class Map {
 
         // Starter room
         starterRoom = r1;
+
+        lampRoom = r2; //TEST
 
         // Room connection
         r1.setEast(r2);

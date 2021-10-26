@@ -70,6 +70,7 @@ public class Adventure {
       //Look command
       if (playerCommands.equals("look")) {
         System.out.println(">You are in " + player.getCurrentRoom());
+        System.out.println(player.getCurrentRoom().getItems());
       }
       //Help command
       if (playerCommands.equals("help")) {
@@ -88,10 +89,12 @@ public class Adventure {
 
       // Take item (Player)
       if (playerCommands.equals("take")) {
-        if (player.getCurrentRoom().removeItem("Lamp")) {
-          player.takeItem();
+        if (player)
+       /* if (player.getCurrentRoom().removeItem("Lamp")) {
+          player.takeItem("Lamp", map.lampRoom);*/
           //Slet om lidt
           System.out.println(player.getInventory());
+          System.out.println(Map.class.getName());
 
         } else {
           System.out.println("There is no item with that name here");
@@ -104,7 +107,7 @@ public class Adventure {
         }
         // Drop item (Player)
         /*if (playerCommands.equals("drop")) {
-          // Fix i morgen
+          // Fiks!!!!
           if (player.getCurrentRoom().) {
 
             System.out.println(player.getInventory());
