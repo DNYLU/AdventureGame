@@ -3,3 +3,5 @@
     public int damage;
 }
  */
+
+// Extend weapons from items (Maybe)
