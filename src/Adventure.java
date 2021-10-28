@@ -87,6 +87,7 @@ public class Adventure {
         System.out.println("Inventory:\n" + player.getInventory());
       }
 
+      //test
       // Take item (Player)
       if (playerCommands.equals("take")) {
         if (player.playerCheckItem()) // Fix items
