@@ -3,6 +3,7 @@
     public Weapon_Sword() {
         name = "Sword";
         damage = 14;
+        weight = 0
     }
 }
 */

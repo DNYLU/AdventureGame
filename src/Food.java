@@ -1,6 +1,6 @@
 public class Food extends Item{
 
-    public Food(String name, int healthPoints) {
+    public Food(String name, int healthPoints, int weight) {
         super(name);
         this.setHealthPoints(healthPoints);
     }

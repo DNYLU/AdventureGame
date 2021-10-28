@@ -44,7 +44,7 @@ public class Map {
         addItems();
     }
     // Items
-    Item bread = new Food("Bread", 15);
+    Item bread = new Food("Bread", 15, 1);
 
 
 
