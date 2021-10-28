@@ -126,5 +126,6 @@ public class Adventure {
     System.out.println("go north, go east, go south, go west OR n, e, s, w - To choose directions");
     System.out.println("look - To check your current location");
     System.out.println("exit - To quit game");
+    System.out.println("take/drop - to add or remove items in your inventory");
   }
 }
