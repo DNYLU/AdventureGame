@@ -7,7 +7,7 @@ public class Player {
     private int playerHealth;
     private ArrayList<Item> inventory;
     private Room currentRoom;
-    private Weapon currentWeapon;
+    //private Weapon currentWeapon;
 
     // "Food"? - Spørg Patrick om mapper/package. Weapons, food etc.
     private int numHealthPotions;
@@ -22,21 +22,6 @@ public class Player {
         inventory = new ArrayList<>();
     }
 
-    // Take item
-    public void takeItem(String itemName, Room room) {
-        ArrayList<Item> items = room.getItems();
-        for (Item item : items) {
-            if (itemName.equals(item.getName())) { // Check item name
-                inventory.add(item);
-            }
-        }
-    }
-
-    //Drop item
-  /*public void dropItem(String itemName) {
-    inventory.remove(itemName);
-  }*/
-
     public boolean playerCheckItem(Item itemName) {
         for (Item item : inventory) {
             if (inventory.equals(itemName)) {
@@ -45,6 +30,20 @@ public class Player {
         }
         return false; // if the item doesn't exist
     }
+
+    // Take item
+    public void takeItem(String itemName, Room room) {
+        ArrayList<Item> items = room.getLoot();
+        for (Item item : items) {
+            if (itemName.equals(item.getName())) { // Check item name
+                inventory.add(item);
+            }
+        }
+    }
+    // Drop item
+  public void dropItem(String itemName) {
+    inventory.remove(itemName);
+  }
 
     // Player constructor
     public Player(String playerName, Room startingPosition, int playerHealth) {

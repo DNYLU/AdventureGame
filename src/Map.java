@@ -4,7 +4,11 @@ public class Map {
     public Room lampRoom; //TEST
     private Room r1, r2, r3, r4, r5, r6, r7, r8, r9;
 
-    Map() { // Names and descriptions
+    public Map() {
+      setupMap();
+    }
+
+    public void setupMap(){ // Names and descriptions
          r1 = new Room("The Great hall", "\nThere are statues on both sides, with paintings on top of the former owners of the manor");
          r2 = new Room("The Bed Chambers", "\nThere are four-poster bed and mirror on the side");
          r3 = new Room("The Solars", "\nThere is a table and a chair");
@@ -17,8 +21,6 @@ public class Map {
 
         // Starter room
         starterRoom = r1;
-
-        lampRoom = r2; //TEST
 
         // Room connection
         r1.setEast(r2);

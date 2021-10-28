@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Adventure {
@@ -16,6 +15,7 @@ public class Adventure {
 
     Map map = new Map();
     // currentRoom = map.starterRoom;
+
     Player player = new Player();
     player.setCurrentRoom(map.starterRoom);
 
@@ -70,7 +70,7 @@ public class Adventure {
       //Look command
       if (playerCommands.equals("look")) {
         System.out.println(">You are in " + player.getCurrentRoom());
-        System.out.println(player.getCurrentRoom().getItems());
+        System.out.println(player.getCurrentRoom().getLoot());
       }
       //Help command
       if (playerCommands.equals("help")) {
@@ -89,7 +89,9 @@ public class Adventure {
 
       // Take item (Player)
       if (playerCommands.equals("take")) {
-        if (player)
+        if (player.playerCheckItem()) // Fix items
+
+
        /* if (player.getCurrentRoom().removeItem("Lamp")) {
           player.takeItem("Lamp", map.lampRoom);*/
           //Slet om lidt
@@ -103,7 +105,7 @@ public class Adventure {
         if (playerCommands.equalsIgnoreCase("drop")) {
           player.getInventory().remove("Lamp");
           System.out.println("Which item would you like to drop?");
-          //insert 'Drop' command
+          //insert 'Drop' method
         }
         // Drop item (Player)
         /*if (playerCommands.equals("drop")) {
@@ -112,9 +114,8 @@ public class Adventure {
 
             System.out.println(player.getInventory());
           }
-        }*/
-
-      }
+        }
+      }*/
     }
 
   } // Start
