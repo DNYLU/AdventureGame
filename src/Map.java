@@ -1,7 +1,6 @@
 public class Map {
 
     public Room starterRoom;
-    public Room lampRoom; //TEST
     private Room r1, r2, r3, r4, r5, r6, r7, r8, r9;
 
     public Map() {
@@ -43,16 +42,14 @@ public class Map {
         r9.setWest(r8);
 
         addItems();
-        removeItems();
     }
+    // Items
+    Item bread = new Food("Bread", 15);
+
+
 
     // Add item to r2
     public void addItems() {
-        r2.addItem(new Item("Lamp","Lamp description", 1));
-    }
-
-    // Remove item from r2
-    public void removeItems() {
-      r2.removeItem("Lamp");
+        r2.addItem(bread);
     }
 }

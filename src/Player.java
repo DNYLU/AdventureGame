@@ -1,3 +1,4 @@
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 
 public class Player {
@@ -6,14 +7,9 @@ public class Player {
     private String playerName;
     private int playerHealth;
     private ArrayList<Item> inventory;
+    //private ArrayList<Item> food;
     private Room currentRoom;
-    //private Weapon currentWeapon;
-
-    // "Food"? - Spørg Patrick om mapper/package. Weapons, food etc.
-    private int numHealthPotions;
-    private int healthPotHealAmount;
-    private int healthPotionDropChance; // Percentage
-
+    Item currentItem;
 
     // Defining Player() constructor
     public Player() {
@@ -32,17 +28,31 @@ public class Player {
     }
 
     // Take item
-    public void takeItem(String itemName, Room room) {
-        ArrayList<Item> items = room.getLoot();
-        for (Item item : items) {
-            if (itemName.equals(item.getName())) { // Check item name
-                inventory.add(item);
+    public void takeItem(String itemName) {
+        boolean itemCheck = false;
+        for (int i = 0; i < currentRoom.getLoot().size() ; i++) {
+            currentItem = currentRoom.getLoot().get(i);
+            if (currentItem.getName().equals(itemName)) {
+                inventory.add(currentItem);
+                getCurrentRoom().getLoot().remove(i);
+                System.out.println("You've picked up: " + currentItem);
+                itemCheck = true;
             }
         }
+        if (!itemCheck) {
+            System.out.println("There is no item with that name here");
+        }
     }
+
     // Drop item
   public void dropItem(String itemName) {
-    inventory.remove(itemName);
+      for (int i = 0; i < inventory.size(); i++) {
+          currentItem = inventory.get(i);
+          if (inventory.get(i).getName().equalsIgnoreCase(itemName)) {
+              inventory.remove(i);
+              getCurrentRoom().getLoot().add(currentItem);
+          }
+      }
   }
 
     // Player constructor
@@ -51,6 +61,29 @@ public class Player {
         this.playerHealth = playerHealth;
         this.currentRoom = startingPosition;
         this.inventory = new ArrayList<>();
+        //this.food = new ArrayList<>();
+    }
+
+    public void addHealth(int addHealth) {
+        this.playerHealth = this.playerHealth + addHealth;
+        if (playerHealth > 100) { // PlayerHP limit is 100
+            this.playerHealth = 100;
+        }
+    }
+
+    public void eatFood(String foodName) {
+        boolean foodCheck = true;
+        for (int i = 0; i < inventory.size() ; i++) {
+            if (inventory.get(i) instanceof Food) {
+                addHealth(((Food) inventory.get(i)).getHealthPoints()); // Adding health when eating
+                System.out.println("You ate: " + foodName + "\nYour current health is: " + getPlayerHealth());
+            }
+            inventory.remove(i);
+            foodCheck = false;
+        }
+        if (foodCheck) {
+            System.out.println("You don't have that item");
+        }
     }
 
     public void setPlayerName(String playerName) {

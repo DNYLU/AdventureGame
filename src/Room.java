@@ -3,24 +3,17 @@ import java.util.ArrayList;
 public class Room {
 
     private Room north, east, south, west;
-
-    //ArrayList for items
     private ArrayList<Item> loot;
-    public ArrayList<Item> getLoot() {
-        return loot;
-    }
-
     //Directions to navigate room
     private String name;
     private String description;
-
     // Constructor
+
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
         loot = new ArrayList<Item>();
     }
-
     public boolean removeItem(String itemName) {
         for (Item item : loot) {
             if (item.getName().equals(itemName)) {
@@ -29,6 +22,10 @@ public class Room {
             }
         }
         return false; // if the item doesn't exist
+    }
+
+    public ArrayList<Item> getLoot() {
+        return loot;
     }
 
     public void addItem(Item item) {
@@ -71,8 +68,10 @@ public class Room {
         return west;
     }
 
+    public void showLoot() {
+        System.out.println(loot.toString());
+    }
     public String toString() {
-
         return this.name + description;
     }
 
