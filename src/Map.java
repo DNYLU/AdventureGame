@@ -45,11 +45,13 @@ public class Map {
     }
     // Items
     Item bread = new Food("Bread", 15, 1);
+    Item apple = new Food("Apple", 5, 1);
 
 
 
     // Add item to r2
     public void addItems() {
         r2.addItem(bread);
+        r2.addItem(apple);
     }
 }

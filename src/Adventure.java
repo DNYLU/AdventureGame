@@ -69,6 +69,7 @@ public class Adventure {
             //Look command
             if (playerInput.equals("look")) {
                 System.out.println(">You are in " + player.getCurrentRoom());
+                System.out.println(player.getCurrentRoom().getDescription());
                 System.out.println("Loot: " + player.getCurrentRoom().getLoot());
             }
             //Help command
@@ -80,18 +81,34 @@ public class Adventure {
                 System.out.println("> You have ended the game");
                 break;
             }
-
             // Show inventory
             if (playerInput.equals("inventory") || playerInput.equals("inv")) {
                 System.out.println("Inventory:\n" + player.getInventory());
             }
-
             // Take item
             if (playerInput.equalsIgnoreCase("take")) {
                 player.getCurrentRoom().showLoot();
                 System.out.println("What would you like to pick up?");
-                itemName = scan.nextLine().toLowerCase().trim();
+                itemName = scan.nextLine();
                 player.takeItem(itemName);
+            }
+            // Drop item
+            if (playerInput.equalsIgnoreCase("drop")) {
+                player.getInventory();
+                System.out.println("Which item would you like to drop?");
+                itemName = scan.nextLine();
+                player.dropItem(itemName);
+            }
+            // Show Health
+            if (playerInput.equalsIgnoreCase("health") || playerInput.equalsIgnoreCase("hp")){
+                player.showHealth();
+            }
+            // Eat food
+            if (playerInput.equalsIgnoreCase("eat")) {
+                System.out.println("What would you like to eat?" +
+                        "\n" + player.getInventory());
+                itemName = scan.nextLine();
+                player.eatFood(itemName);
             }
 
         }

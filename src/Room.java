@@ -68,11 +68,15 @@ public class Room {
         return west;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public void showLoot() {
         System.out.println(loot.toString());
     }
     public String toString() {
-        return this.name + description;
+        return this.name;
     }
 
     public ArrayList<Item> loot() {

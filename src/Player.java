@@ -46,14 +46,29 @@ public class Player {
 
     // Drop item
   public void dropItem(String itemName) {
+        boolean itemCheck = false;
       for (int i = 0; i < inventory.size(); i++) {
           currentItem = inventory.get(i);
           if (inventory.get(i).getName().equalsIgnoreCase(itemName)) {
               inventory.remove(i);
               getCurrentRoom().getLoot().add(currentItem);
+              System.out.println("You've dropped: '" + currentItem + "' in " + currentRoom);
           }
       }
   }
+
+    // Health
+    public void showHealth() {
+        if (playerHealth == 100) {
+            System.out.println("You're HP is full +" +
+                    "\n>Player HP: " + playerHealth);
+        } else if (playerHealth > 25 && playerHealth < 50) {
+            System.out.println(">Player HP: " + playerHealth);
+        } else if (playerHealth < 25) {
+            System.out.println("You are low on HP! " +
+                    "\n>Player HP: " + playerHealth);
+        }
+    }
 
     // Player constructor
     public Player(String playerName, Room startingPosition, int playerHealth) {
@@ -82,7 +97,7 @@ public class Player {
             foodCheck = false;
         }
         if (foodCheck) {
-            System.out.println("You don't have that item");
+            System.out.println("You can't eat that!");
         }
     }
 
