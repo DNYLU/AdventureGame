@@ -139,5 +139,8 @@ public class Adventure {
         System.out.println("look - To check your current location");
         System.out.println("exit - To quit game");
         System.out.println("take/drop - to add or remove items in your inventory");
+        System.out.println("equip - to use weapon");
+        System.out.println(("eat - to eat food"));
+        System.out.println("attack - to attack enemy");
     }
 }
