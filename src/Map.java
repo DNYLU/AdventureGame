@@ -46,12 +46,20 @@ public class Map {
     // Items
     Item bread = new Food("Bread", 15, 1);
     Item apple = new Food("Apple", 5, 1);
+    Item rottenTomato = new Food("Rotten Tomato", -25, 1);
+    Item rustySword = new MeleeWeapon("Rusty Sword", 15);
 
-
+    //Entities
+    Enemy goblin = new Enemy("Goblin", 25, 5);
+    Enemy zombie = new Enemy("Zombie", 50, 13);
+    Enemy skeleton = new Enemy("Skeleton", 45, 17);
 
     // Add item to r2
     public void addItems() {
+        r1.addItem(rustySword);
         r2.addItem(bread);
         r2.addItem(apple);
+        r2.addItem(rottenTomato);
+
     }
 }

@@ -1,12 +1,10 @@
-/*import java.util.Scanner;
+import java.util.Scanner;
 import java.util.Random;
-
-// ADVENTUREGAME PRIVATE
-// 1. Assign "GAME" for defined rooms or randomized rooms
 
 public class Combat {
     Scanner scan = new Scanner(System.in);
     Random rand = new Random();
+    Enemy currentEnemy = new Enemy();
 
     enum enemies {
         ZOMBIE, SKELETON;
@@ -126,4 +124,3 @@ public class Combat {
         System.out.println("######################");
     }
 }
-*/
