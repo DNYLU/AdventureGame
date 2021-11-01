@@ -3,10 +3,9 @@ import java.util.Scanner;
 public class Adventure {
 
     private Scanner scan = new Scanner(System.in);
-
     private String playerInput;
-    //private String playerLook;
-    //private Player playerName;
+    private String playerName;
+
 
     public void start() {
 
@@ -22,7 +21,12 @@ public class Adventure {
                 " on top of the hill.\nYou make way to the manor, but when you enter it the door shuts" +
                 " behind you, and you hear uncomfortable and scary sounds.\nYou try to get out again but the door is" +
                 " locked.\nYou have to find a way out\n\n");
-        System.out.print("Welcome to the Hunted Manor\n\n");
+
+        System.out.print("Enter your name: ");
+        playerName = scan.nextLine();
+        player.setPlayerName(playerName);
+
+        System.out.print("Welcome to the Hunted Manor, " + playerName + "\n\n");
         System.out.println("You are in " + player.getCurrentRoom());
 
         // While loop - Actions
@@ -109,6 +113,19 @@ public class Adventure {
                         "\n" + player.getInventory());
                 itemName = scan.nextLine();
                 player.eatFood(itemName);
+            }
+            // Equip
+            if (playerInput.equalsIgnoreCase("equip")) {
+                System.out.println("What would you like to equip?" +
+                        "\n" + player.getInventory());
+                itemName = scan.nextLine();
+                player.equipItem(itemName);
+            }
+            // Player info
+            if (playerInput.equalsIgnoreCase("info")) {
+                System.out.println("PlayerName: " + player.getPlayerName());
+                System.out.println("HP: " + player.getPlayerHealth());
+                System.out.println("Damage: " + player.getDamage());
             }
 
         }

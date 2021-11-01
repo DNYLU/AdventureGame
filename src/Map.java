@@ -48,6 +48,7 @@ public class Map {
     Item apple = new Food("Apple", 5, 1);
     Item rottenTomato = new Food("Rotten Tomato", -25, 1);
     Item rustySword = new MeleeWeapon("Rusty Sword", 15);
+    Item healthPotion = new Food("Health Potion", 35, 1);
 
     //Entities
     Enemy goblin = new Enemy("Goblin", 25, 5);
@@ -58,8 +59,16 @@ public class Map {
     public void addItems() {
         r1.addItem(rustySword);
         r2.addItem(bread);
+        r4.addItem(bread);
+        r6.addItem(bread);
+        r4.addItem(healthPotion);
+        r6.addItem(healthPotion);
+        r8.addItem(healthPotion);
         r2.addItem(apple);
+        r3.addItem(apple);
+        r7.addItem(apple);
         r2.addItem(rottenTomato);
+        r1.addItem(rottenTomato);
 
     }
 }

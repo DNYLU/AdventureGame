@@ -10,6 +10,8 @@ public class Player {
     //private ArrayList<Item> food;
     private Room currentRoom;
     Item currentItem;
+    Weapon currentWeapon;
+    private int damage;
 
     // Defining Player() constructor
     public Player() {
@@ -99,6 +101,32 @@ public class Player {
         if (foodCheck) {
             System.out.println("You can't eat that!");
         }
+    }
+
+    public void equipItem(String itemName) {
+        boolean itemCheck = false;
+        for (int i = 0; i < inventory.size(); i++) {
+            if (inventory.get(i) instanceof Weapon) {
+                currentWeapon = (Weapon) inventory.get(i);
+                if (currentWeapon.getName().equalsIgnoreCase(itemName)) {
+                        setDamage(currentWeapon.getDamage());
+                    System.out.println("You've equipped: " + currentWeapon +
+                    "\n>Current damage: " + getDamage());
+                }
+                    itemCheck = true;
+            }
+        }
+        if (!itemCheck) {
+            System.out.println("You can't equip that!");
+        }
+    }
+
+    public void setDamage(int damage) {
+        this.damage = currentWeapon.getDamage();
+    }
+
+    public int getDamage() {
+        return damage;
     }
 
     public void setPlayerName(String playerName) {
